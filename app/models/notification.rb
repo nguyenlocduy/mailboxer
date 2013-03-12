@@ -1,4 +1,7 @@
-class Notification < ActiveRecord::Base
+class Notification
+  include Mongoid::Document
+  include Mongoid::Timestamps
+  
   attr_accessor :recipients
   attr_accessible :body, :subject
 

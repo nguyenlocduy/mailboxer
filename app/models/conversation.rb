@@ -1,4 +1,7 @@
-class Conversation < ActiveRecord::Base
+class Conversation
+  include Mongoid::Document
+  include Mongoid::Timestamps
+  
   attr_accessible :subject
 
 	has_many :messages, :dependent => :destroy

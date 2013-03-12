@@ -1,4 +1,7 @@
-class Receipt < ActiveRecord::Base
+class Receipt
+  include Mongoid::Document
+  include Mongoid::Timestamps
+  
   belongs_to :notification, :validate => true, :autosave => true
   belongs_to :receiver, :polymorphic => :true
   belongs_to :message, :foreign_key => "notification_id"

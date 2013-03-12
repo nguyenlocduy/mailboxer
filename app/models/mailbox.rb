@@ -1,4 +1,7 @@
 class Mailbox
+  include Mongoid::Document
+  include Mongoid::Timestamps
+  
   attr_accessor :type
   attr_reader :messageable
   #Initializer method
